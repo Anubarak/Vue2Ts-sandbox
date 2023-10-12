@@ -1,10 +1,12 @@
 <script setup
         lang="ts">
 interface Props {
-    msg: string
+    msg: null | string
 }
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+    msg: 'foo'
+})
 </script>
 
 <template>
